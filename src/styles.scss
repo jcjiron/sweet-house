@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+@import '../node_modules/materialize-css/sass/components/color';
+
+@import './assets/styles/colors.scss';
+
+$roboto-font-path: '../node_modules/materialize-css/dist/fonts/roboto/' !default;
+
+@import '../node_modules/materialize-css/sass/materialize.scss';
