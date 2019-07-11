@@ -2,31 +2,37 @@ import * as fromSidenav from '../actions/sidenav.actions';
 
 
 export interface SidenavState {
-    isSidenavOpen: boolean
+    isSidenavOpen: boolean,
+    isToogled: boolean,
 }
 
 export const InitialState: SidenavState = {
-    isSidenavOpen: false
+    isSidenavOpen: false,
+    isToogled: false
+
 }
 
 /**Función para identificar el estado de la aplicación, si existe o no una sesión activa */
 export function sidebarReducer(state = InitialState, action: fromSidenav.sidenavActions): SidenavState {
     switch (action.type) {
-        case fromSidenav.OPEN_SIDENAV:
+        case fromSidenav.TOGGLE_SIDENAV:
             return {
                 ...state,
-                isSidenavOpen: true
+                isToogled: true
             };
         case fromSidenav.CLOSE_SIDENAV:
             return {
                 ...state,
+                isToogled: false,
                 isSidenavOpen: false
             };
-        case fromSidenav.TOGGLE_SIDENAV:
+        case fromSidenav.OPEN_SIDENAV:
             return {
                 ...state,
-                isSidenavOpen: false
+                isToogled: false,
+                isSidenavOpen: true
             };
+
 
         default:
             return state;
