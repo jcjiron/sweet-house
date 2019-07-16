@@ -28,8 +28,15 @@
             ],
             "styles": [
               "node_modules/@mdi/font/css/materialdesignicons.min.css",
-              "src/styles.scss"
+              "src/sass/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules/materialize-css",
+                "./src",
+                "./src/sass"
+              ]
+            },
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/materialize-css/dist/js/materialize.min.js"

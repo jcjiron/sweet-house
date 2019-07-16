@@ -1,0 +1,6 @@
+
+
+@mixin btn-with-image {
+    @extend .blue, .lighten-4;
+    height: 200px;
+}
