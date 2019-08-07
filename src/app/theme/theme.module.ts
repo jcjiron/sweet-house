@@ -6,6 +6,7 @@ import { MzSidenavModule } from 'ngx-materialize'
 import { MzNavbarModule } from 'ngx-materialize'
 import { MzIconModule, MzIconMdiModule } from 'ngx-materialize'
 import { MzButtonModule } from 'ngx-materialize'
+import { MzCardModule } from 'ngx-materialize'
 
 @NgModule({
   declarations: [],
@@ -16,7 +17,8 @@ import { MzButtonModule } from 'ngx-materialize'
     MzNavbarModule,
     MzIconModule,
     MzIconMdiModule,
-    MzButtonModule
+    MzButtonModule,
+    MzCardModule
   ],
   exports:[
     BrowserAnimationsModule,
@@ -24,7 +26,8 @@ import { MzButtonModule } from 'ngx-materialize'
     MzNavbarModule,
     MzIconModule,
     MzIconMdiModule,
-    MzButtonModule
+    MzButtonModule,
+    MzCardModule
   ]
 })
 export class ThemeModule { }
