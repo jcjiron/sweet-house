@@ -8,9 +8,13 @@
   </mz-sidenav-link>
   <mz-sidenav-divider></mz-sidenav-divider>
   <mz-sidenav-link>
-    <a class="waves-effect waves-light btn blue">Iniciar con Facebook</a>
+    <!-- <a class="waves-effect waves-light btn blue">Iniciar con Facebook</a> -->
   </mz-sidenav-link>
   <mz-sidenav-link>
-    <a class="waves-effect waves-light btn" (click)="googleLogin()">Iniciar con Google</a>
+    <a *ngIf="!user?.uid; else logoutButton" class="waves-effect waves-light btn" (click)="googleLogin()">Iniciar con Google</a>
+    <ng-template #logoutButton>
+    <a class="waves-effect waves-light btn red" (click)="logout()">Salir</a>
+    </ng-template>
+    
   </mz-sidenav-link>
 </mz-sidenav>

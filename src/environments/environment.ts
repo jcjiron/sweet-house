@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  localStorageKey: 'RG5vt457u%$5bj78c452YBBc24432c%#T7&$tv657bu6B&BvH76hvv64',
   firebaseConfig:{
     apiKey: "AIzaSyDl1dxDLYDEiMcdvKHGxnCdobTpVN6y7Y0",
     authDomain: "trovit2.firebaseapp.com",

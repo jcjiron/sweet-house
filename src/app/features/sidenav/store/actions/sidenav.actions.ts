@@ -1,3 +1,4 @@
+import { UserInterface } from 'src/app/shared/interfaces/user.interface';
 import { Action } from '@ngrx/store';
 
 /**
@@ -8,16 +9,12 @@ export const OPEN_SIDENAV = '[Sidenav] open sidenav';
 export const CLOSE_SIDENAV = '[Sidenav] close sidenav';
 
 
-
-
 /**
  * Implementation of auth actions
  */
 export class ToogleSidenavAction implements Action { readonly type = TOGGLE_SIDENAV; }
 export class OpenSidenavAction implements Action { readonly type = OPEN_SIDENAV; }
 export class CloseSidenavAction implements Action { readonly type = CLOSE_SIDENAV; }
-
-
 
 
 /**
