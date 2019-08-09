@@ -13,7 +13,7 @@ import { LoginAction, LogoutAction } from '../login/store/actions/login.actions'
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.sass']
+  styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent implements OnInit, AfterViewInit {
 
@@ -44,7 +44,7 @@ export class SidenavComponent implements OnInit, AfterViewInit {
       if (this.afAuth.auth) {
 
         const u : UserInterface = {
-          PhotoURL: this.afAuth.auth.currentUser.photoURL,
+          photoURL: this.afAuth.auth.currentUser.photoURL,
           displayName: this.afAuth.auth.currentUser.displayName,
           email: this.afAuth.auth.currentUser.email,
           providerId: this.afAuth.auth.currentUser.providerId,

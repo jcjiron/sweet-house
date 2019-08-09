@@ -34,7 +34,7 @@
               "includePaths": [
                 "node_modules/materialize-css",
                 "./src",
-                "./src/sass"
+                "./src/scss"
               ]
             },
             "scripts": [

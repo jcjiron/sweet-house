@@ -6,7 +6,7 @@ export interface UserState extends UserInterface {
 }
 
 export const InitialState: UserState = {
-    PhotoURL: '',
+    photoURL: '',
     displayName: '',
     email: '',
     providerId: '',

@@ -1,4 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 
-$roboto-font-path: '../../node_modules/materialize-css/dist/fonts/roboto/' !default;
-@import './materialize-imports.scss';
+@import "./materialize-imports.scss";
+
+/*Icons*/
+.sh-icon-container {
+    display: flex !important;
+    align-items: center;
+
+    .sh-icon {
+        width: 22px;
+
+        &.left {
+            float: none !important;
+            margin-right: 4px;
+        }
+    }
+}

@@ -1,16 +1,2 @@
 
 
- $roboto-font-path: '../../../../node_modules/materialize-css/dist/fonts/roboto/' !default;
- @import '../../../../node_modules/materialize-css/sass/materialize.scss';
-
-
-
- .container{
-    .login-title{
-        text-align: center;
-    }
-    
-    .form-login-container{
-        height: 200px;
-    }
- }

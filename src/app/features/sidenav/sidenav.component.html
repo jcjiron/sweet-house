@@ -1,20 +1,46 @@
-<mz-sidenav #sidenav [id]="'sidenav-demo'" >
+<mz-sidenav #sidenav [id]="'sidenav-demo'">
+
   <mz-sidenav-header>
-    Sidenav header
+    <div class="sidenav-logo-container">
+      <img *ngIf="!user.uid; else userPhoto" class="sidenav-logo" src="./assets/img/logo.png" alt="">
+      <ng-template #userPhoto>
+        <img [src]="user?.photoURL" class="circle responsive-img sidenav-logo" alt="">
+      </ng-template>
+
+    </div>
   </mz-sidenav-header>
-  <mz-sidenav-subheader>Link Subheader</mz-sidenav-subheader>
-  <mz-sidenav-link>
-    <a href="#">First Link</a>
+
+
+  <mz-sidenav-link *ngIf="user.uid">
+    <a><i class="material-icons right">person</i>Perfil</a>
   </mz-sidenav-link>
+  <mz-sidenav-link *ngIf="user.uid">
+    <a><i class="material-icons right">favorite</i>Favoritos</a>
+  </mz-sidenav-link>
+  <mz-sidenav-link *ngIf="user.uid">
+    <a><i class="material-icons right">home</i>Mis rentas</a>
+  </mz-sidenav-link>
+
   <mz-sidenav-divider></mz-sidenav-divider>
   <mz-sidenav-link>
     <!-- <a class="waves-effect waves-light btn blue">Iniciar con Facebook</a> -->
   </mz-sidenav-link>
-  <mz-sidenav-link>
-    <a *ngIf="!user?.uid; else logoutButton" class="waves-effect waves-light btn" (click)="googleLogin()">Iniciar con Google</a>
-    <ng-template #logoutButton>
-    <a class="waves-effect waves-light btn red" (click)="logout()">Salir</a>
-    </ng-template>
-    
+  <mz-sidenav-link *ngIf="!user?.uid">
+    <a class="waves-effect waves-light btn green sh-icon-container" (click)="googleLogin()">
+      <img class="sh-icon left" src="./assets/icons/png/icon_social_google.png" alt="">
+      <span>Iniciar con Google</span></a>
   </mz-sidenav-link>
+
+  <mz-sidenav-link *ngIf="!user?.uid">
+    <a class="waves-effect waves-light btn blue sh-icon-container" (click)="googleLogin()">
+      <img class="sh-icon left" src="./assets/icons/png/icon_social_facebook.png" alt="">
+      <span>Iniciar con Facebook</span></a>
+  </mz-sidenav-link>
+
+
+  <mz-sidenav-link *ngIf="user?.uid">
+    <a class="waves-effect waves-light btn red" (click)="logout()">Salir</a>
+
+  </mz-sidenav-link>
+
 </mz-sidenav>
