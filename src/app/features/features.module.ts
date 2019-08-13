@@ -6,6 +6,8 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { SharedModule } from '../shared/shared.module';
+import { NewSuiteComponent } from './new-suite/new-suite.component';
+import { CoreModule } from '../core/core.module';
 
 
 @NgModule({
@@ -13,12 +15,14 @@ import { SharedModule } from '../shared/shared.module';
     SidenavComponent,
     HeaderComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    NewSuiteComponent
   ],
   imports: [
     CommonModule,
     ThemeModule,
-    SharedModule
+    SharedModule,
+    CoreModule
   ],
   exports: [
     SidenavComponent,

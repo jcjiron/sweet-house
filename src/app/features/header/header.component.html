@@ -1,14 +1,19 @@
 <mz-navbar>
-  <a href="#" class="brand-logo center ">Sweet House</a>
+  <a [routerLink]="['/home']" class="brand-logo center">Sweet House</a>
   <mz-navbar-item-container [align]="'right'" class="hide-on-small-only">
-    <mz-navbar-item><a routerLink="js">
+    <mz-navbar-item><a [routerLink]="['/new-suite']">
         <button mz-button>
+            <i mz-icon
+            [align]="'left'"
+            [icon]="'attach_money'"
+            [size]="'small'">
+          </i>
           Rentar lugar
         </button>
       </a></mz-navbar-item>
   </mz-navbar-item-container>
   <mz-navbar-item-container [align]="'left'">
-    <mz-navbar-item><a href="#">
+    <mz-navbar-item><a>
         <i mz-icon (click)="togleSidenav()" [align]="'right'" [icon]="'menu'" [size]="'large'">
         </i>
       </a></mz-navbar-item>

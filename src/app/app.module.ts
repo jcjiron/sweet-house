@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
@@ -23,6 +24,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     AppComponent
   ],
   imports: [
+    CoreModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -33,6 +35,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     AngularFireAuthModule, 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports:[
+    CoreModule
+  ]
 })
 export class AppModule { }

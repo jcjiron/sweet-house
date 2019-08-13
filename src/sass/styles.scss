@@ -2,6 +2,12 @@
 
 @import "./materialize-imports.scss";
 
+/*Layout*/
+
+.main-container{
+    margin-top: 45px;
+}
+
 /*Icons*/
 .sh-icon-container {
     display: flex !important;
@@ -15,4 +21,9 @@
             margin-right: 4px;
         }
     }
+}
+
+
+.link-cursor{
+    cursor: pointer;
 }
