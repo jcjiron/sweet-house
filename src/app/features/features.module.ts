@@ -1,3 +1,4 @@
+import { NewSuiteModule } from './new-suite/new-suite.module';
 import { ThemeModule } from './../theme/theme.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -6,7 +7,6 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { SharedModule } from '../shared/shared.module';
-import { NewSuiteComponent } from './new-suite/new-suite.component';
 import { CoreModule } from '../core/core.module';
 
 
@@ -15,10 +15,10 @@ import { CoreModule } from '../core/core.module';
     SidenavComponent,
     HeaderComponent,
     LoginComponent,
-    HomeComponent,
-    NewSuiteComponent
+    HomeComponent
   ],
   imports: [
+    NewSuiteModule,
     CommonModule,
     ThemeModule,
     SharedModule,

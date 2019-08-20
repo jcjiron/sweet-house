@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col s12">
+    <mz-input-container>
+      <input mz-input [label]="'Título'" [validate]="false" id="title-input" placeholder="Gran recarama en..."
+        name="title" length="150" type="text">
+    </mz-input-container>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s12 m4">
+    <mz-input-container>
+      <input mz-input [label]="'Precio'" [validate]="false" id="price-input" placeholder="1,000" type="number"
+        name="price">
+    </mz-input-container>
+  </div>
+  <div class="col s6 m4">
+    <mz-select-container>
+      <select mz-select id="property-type-select" [placeholder]="'Tipo de propiedad'">
+        <option class="">Casa</option>
+        <option class="">Departamento</option>
+      </select>
+    </mz-select-container>
+  </div>
+  <div class="col s6 m4">
+    <mz-select-container>
+      <select mz-select id="suite-type-select" [placeholder]="'Servicio'">
+        <option class="">Renta</option>
+        <option class="">Venta</option>
+      </select>
+    </mz-select-container>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s12 next-button-container">
+    <button (click)="goToNextStep()" class="waves-effect waves-light btn "><i
+        class="material-icons right">navigate_next</i>Siguiente</button>
+  </div>
+</div>

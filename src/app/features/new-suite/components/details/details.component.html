@@ -1,0 +1,54 @@
+
+<div class="row">
+  <div class="col s6 m6">
+      <mz-select-container>
+        <select mz-select id="bathrooms-input" [placeholder]="'Baños'" name="bathrooms" >
+          <option class="">1+</option>
+          <option class="">2+</option>
+        </select>
+      </mz-select-container>
+    </div>
+
+    <div class="col s6 m6">
+        <mz-select-container>
+          <select mz-select id="bedrooms-input" [placeholder]="'Recamaras'" name="bedrooms" >
+            <option class="">1+</option>
+            <option class="">2+</option>
+          </select>
+        </mz-select-container>
+      </div>
+</div>
+
+<div class="row">
+  <div class="col s6 m6">
+      <mz-select-container>
+        <select mz-select id="parking-input" [placeholder]="'Estacionamientos'" name="parkings" >
+          <option class="">1+</option>
+          <option class="">2+</option>
+        </select>
+      </mz-select-container>
+    </div>
+
+<div class="col s6">
+  <mz-input-container>
+    <input mz-input [label]="'Metros cuadrados'" [validate]="false" id="size-input" placeholder="50 m"
+      type="number" name="size" >
+  </mz-input-container>
+</div>
+</div>
+
+<div class="row">
+<div class="col s12">
+  <mz-textarea-container>
+    <textarea mz-textarea [label]="'Descripción'" id="description-textarea"
+      placeholder="El departamento tiene una un balcón..." length="300" 
+      name="description"  ></textarea>
+  </mz-textarea-container>
+</div>
+</div>
+<div class="row">
+  <div class="col s12 next-button-container">
+    <button (click)="goToNextStep()"  class="waves-effect waves-light btn "><i
+        class="material-icons right">navigate_next</i>Siguiente</button>
+  </div>
+</div>

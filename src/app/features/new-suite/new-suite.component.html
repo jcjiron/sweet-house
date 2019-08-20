@@ -1,146 +1,18 @@
 <div class="container main-container">
 
-  <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
-    <div class="row">
-      <div class="col s12">
-        <mz-input-container>
-          <input mz-input [label]="'Título'" [validate]="false" id="title-input" placeholder="Gran recarama en..."
-            name="title" formControlName="title" length="150" type="text">
-        </mz-input-container>
-      </div>
+  <!-- <div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s3"><a href="#test1">Test 1</a></li>
+        <li class="tab col s3"><a class="active" href="#test2">Test 2</a></li>
+        <li class="tab col s3 disabled"><a href="#test3">Disabled Tab</a></li>
+        <li class="tab col s3"><a href="#test4">Test 4</a></li>
+      </ul>
     </div>
 
-    <div class="row">
-      <div class="col s12 m4">
-        <mz-input-container>
-          <input mz-input [label]="'Precio'" [validate]="false" id="price-input" placeholder="1,000" type="number"
-            name="price" formControlName="price">
-        </mz-input-container>
-      </div>
-      <div class="col s6 m4">
-        <mz-select-container>
-          <select mz-select id="property-type-select" [placeholder]="'Tipo de propiedad'">
-            <option class="">Casa</option>
-            <option class="">Departamento</option>
-          </select>
-        </mz-select-container>
-      </div>
-      <div class="col s6 m4">
-        <mz-select-container>
-          <select mz-select id="suite-type-select" [placeholder]="'Servicio'">
-            <option class="">Renta</option>
-            <option class="">Venta</option>
-          </select>
-        </mz-select-container>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col s6 m6">
-        <mz-input-container>
-          <input mz-input [label]="'Código postal'" [validate]="false" id="zip-code-input" placeholder="55079"
-            type="number" name="zipCode" formControlName="zipCode" >
-        </mz-input-container>
-      </div>
-      <div class="col s6 m6">
-        <mz-input-container>
-          <input mz-input [label]="'Delegación o Municipio'" [validate]="false" id="city-input"
-            placeholder="Chapultepec" type="text" name="city" formControlName="city" >
-        </mz-input-container>
-      </div>
-    </div>
-
-    <div class="row">
-        <div class="col s12 m6">
-            <mz-input-container>
-              <input mz-input [label]="'Estado'" [validate]="false" id="state-input" placeholder="Ciudad de México"
-                type="text" name="state" formControlName="state" >
-            </mz-input-container>
-          </div>
-      <div class="col s12 m6">
-        <mz-input-container>
-          <input mz-input [label]="'Colonia'" [validate]="false" id="suburb-input" placeholder="Jardines de Morelos"
-            type="text" name="suburb" formControlName="suburb" >
-        </mz-input-container>
-      </div>
-    </div>
+  </div> -->
 
 
-    <div class="row">
-      <div class="col s12 m4">
-        <mz-input-container>
-          <input mz-input [label]="'Calle'" [validate]="false" id="street-input" placeholder="Girasoles" type="text" 
-          name="street" formControlName="street" >
-        </mz-input-container>
-      </div>
-      <div class="col s6 m4">
-        <mz-input-container>
-          <input mz-input [label]="'N. interno'" [validate]="false" id="internal-number-input" placeholder="12"
-            type="number" name="internalNumber" formControlName="internalNumber" >
-        </mz-input-container>
-      </div>
-      <div class="col s6 m4">
-        <mz-input-container>
-          <input mz-input [label]="'N. externo'" [validate]="false" id="external-number-input" placeholder="5"
-            type="number" name="externalNumber" formControlName="externalNumber" >
-        </mz-input-container>
-      </div>
-    </div>
-
-    <div class="row">
-        <div class="col s12 m6">
-            <mz-select-container>
-              <select mz-select id="bathrooms-input" [placeholder]="'Baños'" name="bathrooms" formControlName="bathrooms">
-                <option class="">1+</option>
-                <option class="">2+</option>
-              </select>
-            </mz-select-container>
-          </div>
-
-          <div class="col s12 m6">
-              <mz-select-container>
-                <select mz-select id="bedrooms-input" [placeholder]="'Recamaras'" name="bedrooms" formControlName="bedrooms">
-                  <option class="">1+</option>
-                  <option class="">2+</option>
-                </select>
-              </mz-select-container>
-            </div>
-    </div>
-
-    <div class="row">
-        <div class="col s12 m6">
-            <mz-select-container>
-              <select mz-select id="parking-input" [placeholder]="'Estacionamientos'" name="parkings" formControlName="parkings">
-                <option class="">1+</option>
-                <option class="">2+</option>
-              </select>
-            </mz-select-container>
-          </div>
-
-      <div class="col s6">
-        <mz-input-container>
-          <input mz-input [label]="'Metros cuadrados'" [validate]="false" id="size-input" placeholder="50 m"
-            type="number" name="size" formControlName="size" >
-        </mz-input-container>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col s12">
-        <mz-textarea-container>
-          <textarea mz-textarea [label]="'Descripción'" id="description-textarea"
-            placeholder="El departamento tiene una un balcón..." length="300" 
-            name="description" formControlName="description" ></textarea>
-        </mz-textarea-container>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col s12 publish-button-container">
-        <button type="submit" class="waves-effect waves-light btn "><i
-            class="material-icons left">publish</i>Publicar</button>
-      </div>
-    </div>
-  </form>
-
+  <router-outlet></router-outlet>
 
 </div>

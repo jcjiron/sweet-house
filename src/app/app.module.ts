@@ -1,3 +1,4 @@
+import { SharedModule } from './shared/shared.module';
 import { FeaturesModule } from './features/features.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -33,6 +34,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     AngularFireModule.initializeApp(environment.firebaseConfig), 
     AngularFireAuthModule, 
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent],
