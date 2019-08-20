@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as fromRoot from '../../app.reducer'
-import { ToogleSidenavAction } from '../sidenav/store/actions/sidenav.actions';
+import { ToogleSidenavAction } from '../../redux/sidenav/actions/sidenav.actions';
 
 
 @Component({

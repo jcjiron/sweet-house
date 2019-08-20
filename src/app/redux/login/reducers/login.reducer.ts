@@ -1,5 +1,6 @@
-import { UserInterface } from './../../../../shared/interfaces/user.interface';
+
 import * as fromLogin from '../actions/login.actions';
+import { UserInterface } from 'src/app/shared/interfaces/user.interface';
 
 export interface UserState extends UserInterface {
 

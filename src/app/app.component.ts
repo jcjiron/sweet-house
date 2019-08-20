@@ -2,7 +2,7 @@ import { AppState } from './app.reducer';
 import { Store } from '@ngrx/store';
 import { LocalStorageService } from './shared/services/local-storage.service';
 import { Component, OnInit } from '@angular/core';
-import { SetUserAction } from './features/login/store/actions/login.actions';
+import { SetUserAction } from './redux/login/actions/login.actions';
 
 @Component({
   selector: 'app-root',

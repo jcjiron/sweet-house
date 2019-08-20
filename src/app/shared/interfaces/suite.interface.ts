@@ -1,8 +1,8 @@
 export interface SuiteInterface {
     title?:string,
     price?:number,
-    suite_type?:any, //venta o renta
-    property_type?:any, //casa, departamento, otro
+    suiteType?:any, //venta o renta
+    propertyType?:any, //casa, departamento, otro
     bedrooms?:number,
     bathrooms?:number,
     size?:number,

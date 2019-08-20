@@ -9,8 +9,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CardComponent implements OnInit {
 
   @Input() suite: SuiteInterface = {
-    suite_type: '',
-    property_type: '',
+    suiteType: '',
+    propertyType: '',
     price: 7500,
     bedrooms: 3,
     bathrooms: 2,

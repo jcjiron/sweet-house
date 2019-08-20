@@ -7,8 +7,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { auth, User } from 'firebase/app';
 import { UserInterface } from 'src/app/shared/interfaces/user.interface';
 import * as ls from 'src/app/shared/constants/local-storage.constant';
-import { SidenavState } from './store/reducers/sidenav.reducers';
-import { LoginAction, LogoutAction } from '../login/store/actions/login.actions';
+import { SidenavState } from '../../redux/sidenav/reducers/sidenav.reducers';
+import { LoginAction, LogoutAction } from '../../redux/login/actions/login.actions';
 
 @Component({
   selector: 'app-sidenav',
@@ -31,7 +31,7 @@ export class SidenavComponent implements OnInit, AfterViewInit {
   ngOnInit() {
 
     this.store.select('user')
-      .subscribe(data=> {
+      .subscribe((data:any)=> {
 
         this.user = data;
       });
