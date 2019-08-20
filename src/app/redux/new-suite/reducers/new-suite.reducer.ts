@@ -3,25 +3,25 @@ import { SuiteInterface } from '../../../shared/interfaces/suite.interface';
 import * as fromNewSuite from '../actions/new-suite.actions';
 
 export interface NewSuiteState extends SuiteInterface {
-    registerStep:number
+    registerStep: number
 
 }
 
 export const InitialState: NewSuiteState = {
     registerStep: 1,
     title: '',
-    price: 0,
-    suiteType: '', 
+    price: null,
+    suiteType: '',
     propertyType: '',
-    bedrooms: 0,
-    bathrooms: 0,
-    size: 0,
-    garages: 0,
+    bedrooms: null,
+    bathrooms: null,
+    size: null,
+    garages: null,
     description: '',
     date_at: '',
-    premium:false,
+    premium: false,
     premium_at: '',
-    status:false,
+    status: false,
     photos: []
 };
 
@@ -31,8 +31,16 @@ export function newSuiteReducer(state = InitialState, action: fromNewSuite.newSu
     switch (action.type) {
         case fromNewSuite.NEW_SUITE_FIRST_STEP:
             return {
+                ...state,
                 ...action.newSuite,
                 registerStep: 2
+            };
+
+        case fromNewSuite.NEW_SUITE_THIRD_STEP:
+            return {
+                ...state,
+                ...action.newSuite,
+                registerStep: 4
             };
 
         default:

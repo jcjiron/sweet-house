@@ -13,10 +13,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class MainInfoComponent implements OnInit {
 
-  // title:string;
-  // price:number;
-  // suiteType?:any = suiteconstant.DEFAULT_SUITE_TYPE.id;
-  // propertyType?:any = suiteconstant.DEFAULT_PROPERTY_TYPE.id;
+  title:string;
+  price:number;
+  suiteType:string;
+  propertyType:string;
+
 
   suiteTypes: any[] = [...suiteconstant.SUITE_TYPES];
   propertyTypes: any[] = [...suiteconstant.PROPERTY_TYPES];
@@ -26,27 +27,38 @@ export class MainInfoComponent implements OnInit {
   constructor(
     private router:Router,
     private store:Store<AppState>
-  ) { }
+  ) {
+
+  }
 
   ngOnInit() {
 
-    this.newSuiteStep1Form = new FormGroup({
+    this.store.select('newSuite')
+      .subscribe(data=>{
+        this.title = data.title;
+        this.price = data.price;
+        this.suiteType = data.suiteType;
+        this.propertyType = data.propertyType;
 
-      title: new FormControl(null, Validators.required),
-      price: new FormControl(null, Validators.required),
-      suiteType: new FormControl(null, Validators.required),
-      propertyType: new FormControl(null, Validators.required),
+        this.newSuiteStep1Form = new FormGroup({
 
-    });
+          title: new FormControl(this.title, Validators.required),
+          price: new FormControl(this.price, Validators.required),
+          suiteType: new FormControl(this.suiteType, Validators.required),
+          propertyType: new FormControl(this.propertyType, Validators.required),
+    
+        });
+
+      })
+
+
   }
 
   onSuiteTypeChange(event){
-    console.log(event);
     
   }
 
   onPropertyTypeChange(event){
-    console.log(event);
 
   }
 
