@@ -9,16 +9,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 
-// Redux
+/**Redux */
 import { StoreModule } from '@ngrx/store';
 import { appReducers } from './app.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 
-//Firebase
+/**Firebase */
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
+/**Maps */
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,11 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     AngularFireModule.initializeApp(environment.firebaseConfig), 
     AngularFireAuthModule, 
-    SharedModule
+    SharedModule,
+    AgmCoreModule.forRoot({
+      apiKey: environment.googleApi,
+      libraries: ['places']
+    })
   ],
   providers: [],
   bootstrap: [AppComponent],

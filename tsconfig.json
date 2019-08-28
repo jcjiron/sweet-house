@@ -20,7 +20,8 @@
     ],
     "types": [
       "jquery",
-      "materialize-css"
+      "materialize-css",
+      "googlemaps"
     ]
   }
 }

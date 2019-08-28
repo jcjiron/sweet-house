@@ -10,6 +10,7 @@ import { LocationComponent } from './components/location/location.component';
 import { MainInfoComponent } from './components/main-info/main-info.component';
 import { NewSuiteRoutingModule } from './new-suite.routing';
 import { Routes, RouterModule } from '@angular/router';
+import { AgmCoreModule } from '@agm/core';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { Routes, RouterModule } from '@angular/router';
         CoreModule,
         CommonModule,
         NewSuiteRoutingModule,
+        AgmCoreModule
     ],
     exports: [
         NewSuiteComponent
