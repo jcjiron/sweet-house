@@ -4,12 +4,14 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { CardComponent } from './components/card/card.component';
 import { ThemeModule } from '../theme/theme.module';
 import { FooterComponent } from './components/footer/footer.component';
+import { PaymentComponent } from './components/payment/payment.component';
 
 @NgModule({
   declarations: [
     CarouselComponent, 
     CardComponent,
-    FooterComponent
+    FooterComponent,
+    PaymentComponent
   ],
   imports: [
     CommonModule,
@@ -18,7 +20,8 @@ import { FooterComponent } from './components/footer/footer.component';
   exports: [
     CarouselComponent, 
     CardComponent,
-    FooterComponent
+    FooterComponent,
+    PaymentComponent
   ]
 })
 export class SharedModule { }
