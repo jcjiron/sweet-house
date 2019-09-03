@@ -13,4 +13,7 @@ export interface SuiteInterface {
     premium_at?:string,
     status?:boolean,
     photos?:string[]
+    latitude?:number,
+    longitude?:number,
+    googleAddress?:string
 }

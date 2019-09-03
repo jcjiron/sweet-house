@@ -22,7 +22,10 @@ export const InitialState: NewSuiteState = {
     premium: false,
     premium_at: '',
     status: false,
-    photos: []
+    photos: [],
+    latitude: null,
+    longitude: null,
+    googleAddress: null
 };
 
 
@@ -32,17 +35,22 @@ export function newSuiteReducer(state = InitialState, action: fromNewSuite.newSu
         case fromNewSuite.NEW_SUITE_FIRST_STEP:
             return {
                 ...state,
-                ...action.newSuite,
+                ...action.payload,
                 registerStep: 2
             };
 
         case fromNewSuite.NEW_SUITE_THIRD_STEP:
             return {
                 ...state,
-                ...action.newSuite,
+                ...action.payload,
                 registerStep: 4
             };
-
+        case fromNewSuite.NEW_SUITE_FOURTH_STEP:
+            return {
+                ...state,
+                ...action.payload,
+                registerStep: 5
+            };
         default:
             return state;
 

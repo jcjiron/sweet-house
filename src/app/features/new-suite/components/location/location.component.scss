@@ -1,9 +1,15 @@
+
+
+agm-map {
+    height: 300px;
+}
+
 .next-button-container{
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
-}
 
-agm-map {
-    height: 300px;
+    .next-button{
+        margin-left: 4px;
+    }
 }
