@@ -1,0 +1,27 @@
+
+@import "../../../../sass/materialize-imports.scss";
+
+
+.fav-button-disabled {
+    @extend .white;
+    @extend .blue-grey-text, .text-lighten-4;
+  }
+
+  .fav-button{
+    @extend .white;
+    @extend .red-text;
+  }
+
+.card-image{
+    background: url(~/assets/img/department.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 200px;
+}
+.card-content{
+    .department-info-container{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}

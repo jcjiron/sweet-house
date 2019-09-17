@@ -1,0 +1,20 @@
+
+
+
+$primary-color: color("blue", "base") !default;
+$primary-color-light: lighten($primary-color, 15%) !default;
+$primary-color-dark: darken($primary-color, 15%) !default;
+
+$secondary-color: color("deep-orange", "accent-3") !default;
+
+$success-color: color("green", "base") !default;
+$error-color: color("red", "base") !default;
+$link-color: color("light-blue", "darken-1") !default;
+
+$accent-color1: #8b787c;
+$accent-color1-light:lighten($accent-color1, 15%) !default;
+$accent-color1-dark: darken($accent-color1, 15%) !default;
+
+$accent-color2: #e04166;
+$accent-color2-light:lighten($accent-color2, 15%) !default;
+$accent-color2-dark: darken($accent-color2, 15%) !default;

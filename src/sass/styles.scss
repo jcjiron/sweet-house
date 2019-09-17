@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "./materialize-imports.scss";
+
+/************************************************************/
+/**Theme*/
+/************************************************************/
+.btn-secondary{
+    background: $accent-color1;
+    &:hover{
+        background: $accent-color1-dark !important;
+    }
+}
+/************************************************************/
+/**Layout*/
+/************************************************************/
+.main-container{
+    margin-top: 45px;
+}
+/************************************************************/
+/**Icons*/
+/************************************************************/
+.sh-icon-container {
+    display: flex !important;
+    align-items: center;
+
+    .sh-icon {
+        width: 22px;
+
+        &.left {
+            float: none !important;
+            margin-right: 4px;
+        }
+    }
+}
+/************************************************************/
+/**Cursor*/
+/************************************************************/
+.link-cursor{
+    cursor: pointer;
+}

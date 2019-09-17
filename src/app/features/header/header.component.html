@@ -1,0 +1,21 @@
+<mz-navbar>
+  <a [routerLink]="['/home']" class="brand-logo center">Suite House</a>
+  <mz-navbar-item-container [align]="'right'" class="hide-on-small-only">
+    <mz-navbar-item><a [routerLink]="['/new-suite']">
+        <button mz-button>
+            <i mz-icon
+            [align]="'left'"
+            [icon]="'attach_money'"
+            [size]="'small'">
+          </i>
+          Publica un lugar
+        </button>
+      </a></mz-navbar-item>
+  </mz-navbar-item-container>
+  <mz-navbar-item-container [align]="'left'">
+    <mz-navbar-item><a>
+        <i mz-icon (click)="togleSidenav()" [align]="'right'" [icon]="'menu'" [size]="'large'">
+        </i>
+      </a></mz-navbar-item>
+  </mz-navbar-item-container>
+</mz-navbar>

@@ -1,0 +1,26 @@
+<h4>Localiza la propiedad </h4>
+
+<div class="form-group">
+  <label>Introduce la dirección</label>
+  <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()"
+    placeholder="Lindavista 34" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search>
+</div>
+<div class="address">
+<span>{{address}}</span>
+</div>
+<div class="row">
+  <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+    <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true" (dragEnd)="markerDragEnd($event)">
+    </agm-marker>
+  </agm-map>
+</div>
+
+<div class="row">
+  <div class="col s12 next-button-container">
+    <button (click)="goToBackStep()" class="waves-effect waves-light btn btn-secondary">
+      <i class="material-icons left">keyboard_arrow_left</i>Atras</button>
+  
+    <button (click)="goToNextStep()" [disabled]="address?.length === 0" class="waves-effect waves-light btn next-button">
+      <i class="material-icons right">keyboard_arrow_right</i>Siguiente</button>
+  </div>
+</div>
