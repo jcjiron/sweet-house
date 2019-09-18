@@ -5,7 +5,7 @@ import * as fromRoot from '../../app.reducer'
 import { MzSidenavComponent } from 'ngx-materialize';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth, User } from 'firebase/app';
-import { UserInterface } from 'src/app/shared/interfaces/user.interface';
+import { UserInterface } from 'src/app/shared/models/user.interface';
 import * as ls from 'src/app/shared/constants/local-storage.constant';
 import { SidenavState } from '../../redux/sidenav/reducers/sidenav.reducers';
 import { LoginAction, LogoutAction } from '../../redux/login/actions/login.actions';

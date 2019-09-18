@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FileItem } from 'src/app/shared/models/file-item.class';
 
 @Component({
   selector: 'app-photos',
@@ -7,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PhotosComponent implements OnInit {
 
+  estaSobreElemento = false;
+  files: FileItem[] = [];
+  
   constructor() { }
+
+  loadPictures() {
+    // this._cargaImagenes.cargarImagenesFirebase( this.files );
+    console.log(this.files);
+    
+  }
 
   ngOnInit() {
   }

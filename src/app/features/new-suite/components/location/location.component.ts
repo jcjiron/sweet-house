@@ -1,11 +1,11 @@
 /// <reference types="@types/googlemaps" />
 
-import { Component, OnInit, ViewChild, ElementRef, NgZone } from '@angular/core';
 import { MapsAPILoader, MouseEvent } from '@agm/core';
+import { Component, ElementRef, NgZone, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/app.reducer';
-import { NewSuiteThirdStepAction, NewSuiteFourthStepAction } from 'src/app/redux/new-suite/actions/new-suite.actions';
+import { NewSuiteFourthStepAction } from 'src/app/redux/new-suite/actions/new-suite.actions';
 
 @Component({
   selector: 'app-location',

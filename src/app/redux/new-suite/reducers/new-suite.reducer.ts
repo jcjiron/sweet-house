@@ -1,4 +1,4 @@
-import { SuiteInterface } from '../../../shared/interfaces/suite.interface';
+import { SuiteInterface } from '../../../shared/models/suite.interface';
 
 import * as fromNewSuite from '../actions/new-suite.actions';
 

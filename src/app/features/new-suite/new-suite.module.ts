@@ -1,3 +1,4 @@
+import { SharedModule } from './../../shared/shared.module';
 import { NewSuiteComponent } from './new-suite.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -27,7 +28,8 @@ import { AgmCoreModule } from '@agm/core';
         CoreModule,
         CommonModule,
         NewSuiteRoutingModule,
-        AgmCoreModule
+        AgmCoreModule,
+        SharedModule
     ],
     exports: [
         NewSuiteComponent

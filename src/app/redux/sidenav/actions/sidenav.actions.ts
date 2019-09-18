@@ -1,4 +1,4 @@
-import { UserInterface } from 'src/app/shared/interfaces/user.interface';
+import { UserInterface } from 'src/app/shared/models/user.interface';
 import { Action } from '@ngrx/store';
 
 /**

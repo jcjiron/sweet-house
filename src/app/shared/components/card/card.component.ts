@@ -1,4 +1,4 @@
-import { SuiteInterface } from './../../interfaces/suite.interface';
+import { SuiteInterface } from './../../models/suite.interface';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({

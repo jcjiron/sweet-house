@@ -1,6 +1,6 @@
 
 import * as fromLogin from '../actions/login.actions';
-import { UserInterface } from 'src/app/shared/interfaces/user.interface';
+import { UserInterface } from 'src/app/shared/models/user.interface';
 
 export interface UserState extends UserInterface {
 
