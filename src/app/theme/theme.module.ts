@@ -9,6 +9,7 @@ import { MzButtonModule } from 'ngx-materialize'
 import { MzCardModule } from 'ngx-materialize'
 import { MzInputModule } from 'ngx-materialize'
 import { MzSelectModule } from 'ngx-materialize'
+import { MzTabModule } from 'ngx-materialize'
 
 @NgModule({
   declarations: [],
@@ -24,7 +25,8 @@ import { MzSelectModule } from 'ngx-materialize'
     MzInputModule,
     MzTextareaModule,
     MzValidationModule,
-    MzSelectModule
+    MzSelectModule,
+    MzTabModule
   ],
   exports:[
     BrowserAnimationsModule,
@@ -37,7 +39,8 @@ import { MzSelectModule } from 'ngx-materialize'
     MzInputModule,
     MzTextareaModule,
     MzValidationModule,
-    MzSelectModule
+    MzSelectModule,
+    MzTabModule
   ]
 })
 export class ThemeModule { }

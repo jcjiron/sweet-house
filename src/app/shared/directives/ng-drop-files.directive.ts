@@ -14,13 +14,25 @@ export class NgDropFilesDirective {
    */
   @Input() files: FileItem[] = [];
   /**
+   * Files limit
+   * @default 10 files
+   */
+  @Input() filesLimit: number= 10;
+
+    /**
+   * Size limit in Megabytes
+   * @default 20 Megabytes
+   * 
+   */
+  @Input() sizeLimit: number= 20;
+  /**
    * Mouse listener
    */
   @Output() onMouseOver: EventEmitter<boolean> = new EventEmitter();
   /**
    * File inut reference
    */
-  @ViewChild('fileInput') fileInput: any
+  @ViewChild('fileInput', {static: false}) fileInput: any
 
 
   /**
@@ -105,7 +117,7 @@ export class NgDropFilesDirective {
 
       const file = filesList[property];
 
-      if (this._isValidFile(file)) {
+      if (this._isValidFile(file) && this.files.length < this.filesLimit) {
 
         const nuevoArchivo = new FileItem(file);
         this.files.push(nuevoArchivo);
@@ -161,5 +173,11 @@ export class NgDropFilesDirective {
     return (fileType === '' || fileType === undefined) ? false : fileType.startsWith('image');
   }
 
-
+  /**
+   * Valid if size in under the limit
+   * @param file 
+   */
+  private _isUndersizeLimit(file: File): boolean {
+    return ;
+  }
 }

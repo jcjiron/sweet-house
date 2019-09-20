@@ -18,7 +18,7 @@ import { LoginAction, LogoutAction } from '../../redux/login/actions/login.actio
 export class SidenavComponent implements OnInit, AfterViewInit {
 
 
-  @ViewChild(MzSidenavComponent)
+  @ViewChild(MzSidenavComponent, { static: true })
   sidenav: MzSidenavComponent;
 
   user: UserInterface;

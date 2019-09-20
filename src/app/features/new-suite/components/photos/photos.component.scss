@@ -1,5 +1,29 @@
-.next-button-container{
+@import "../../../../../sass/materialize-imports.scss";
+
+.next-button-container {
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
+}
+
+.images-container {
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+
+    .preview-image {
+        width: 200px;
+        height: 113px;
+        overflow: hidden;
+        margin-right: 3px;
+    }
+}
+
+@media #{$small-and-down} {
+    .preview-image {
+        width: 160px !important;
+        height: 90px !important;
+    }
 }

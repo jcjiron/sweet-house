@@ -1,12 +1,18 @@
+
+<h4>Subir fotos</h4>
+
+<span>Puedes subir hasta un máximo de 10 fotos o 20 Mb.</span>
 <div appNgDropFiles [files]="files" (onMouseOver)="estaSobreElemento = $event"
   [ngClass]="{ 'file-over': estaSobreElemento }" class="well drop-zone">
-  <h4>Haga click o deje caer aquí los archivos</h4>
+  <h4>Haz click o deja caer las fotos aquí</h4>
   <img src="assets/img/drop-images.png">
 
   <input id="fileInput" type="file" style="display: none" multiple accept='image/*' #fileInput>
 
 </div>
 
-
-
-<button (click)="loadPictures()">Enviar</button>
+<div class="images-container">
+  <div class="preview-image" *ngFor="let image of files">
+    <img class="responsive-img" [src]="image?.imageUrl" />
+  </div>
+</div>

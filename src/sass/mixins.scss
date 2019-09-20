@@ -1,6 +1,31 @@
 
 
+// Small screens are defined as having a max-width of 600px
+// @media #{$small-and-down} {
+//     styles for small screens and down
+//   }
+
+// Medium screens are defined as having a max-width of 992px
+//   @media #{$medium-and-up} {
+//     styles for medium screens and larger
+//   }
+//   @media #{$medium-and-down} {
+//     styles for medium screens and down
+//   }
+
+//  Large screen are defined as having a min-width of 993px
+//   @media #{$large-and-up} {
+//     styles for large screens and up
+//   }
+
+// Extra Large screen are defined as having a min-width of 1200px
+//   @media #{$extra-large-and-up} {
+//     styles for extra large screens and up
+//   }
+
 @mixin btn-with-image {
     @extend .blue, .lighten-4;
     height: 200px;
 }
+
+

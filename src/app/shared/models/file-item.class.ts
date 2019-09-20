@@ -5,6 +5,7 @@ export class FileItem {
     public url: string;
     public isUploading: boolean;
     public progress: number;
+    public imageUrl: string | ArrayBuffer
 
     constructor( file: File ) {
 
@@ -13,7 +14,16 @@ export class FileItem {
 
         this.isUploading = false;
         this.progress = 0;
+        this.getImageUrl();
+    }
 
+    private getImageUrl(){
+
+        let reader = new FileReader();
+        reader.readAsDataURL(this.file); 
+        reader.onload = (_event) => { 
+          this.imageUrl = reader.result; 
+        }
     }
 
 }

@@ -20,7 +20,7 @@ export class LocationComponent implements OnInit {
   address: string = "";
   private geoCoder;
 
-  @ViewChild('search')
+  @ViewChild('search', { static: true })
   public searchElementRef: ElementRef;
 
 
