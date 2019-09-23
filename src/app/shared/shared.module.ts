@@ -6,6 +6,7 @@ import { ThemeModule } from '../theme/theme.module';
 import { FooterComponent } from './components/footer/footer.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { NgDropFilesDirective } from './directives/ng-drop-files.directive';
+import { BytesPipe } from './pipes/bytes.pipe';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { NgDropFilesDirective } from './directives/ng-drop-files.directive';
     CardComponent,
     FooterComponent,
     PaymentComponent,
-    NgDropFilesDirective
+    NgDropFilesDirective,
+    BytesPipe
   ],
   imports: [
     CommonModule,
@@ -26,7 +28,8 @@ import { NgDropFilesDirective } from './directives/ng-drop-files.directive';
     CardComponent,
     FooterComponent,
     PaymentComponent,
-    NgDropFilesDirective
+    NgDropFilesDirective,
+    BytesPipe
   ]
 })
 export class SharedModule { }

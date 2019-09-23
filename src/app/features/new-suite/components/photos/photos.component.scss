@@ -6,20 +6,27 @@
     margin-bottom: 10px;
 }
 
-.images-container {
-    height: 500px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 10px;
+table{
+    thead{
+        th{
+            text-align: center;
 
-    .preview-image {
-        width: 200px;
-        height: 113px;
-        overflow: hidden;
-        margin-right: 3px;
+        }
     }
 }
+
+
+
+.image-cell{
+    display: flex;
+    justify-content: center;
+}
+
+.preview-image {
+    width: 150px;
+    margin-right: 3px;
+}
+
 
 @media #{$small-and-down} {
     .preview-image {

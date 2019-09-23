@@ -6,11 +6,14 @@ export class FileItem {
     public isUploading: boolean;
     public progress: number;
     public imageUrl: string | ArrayBuffer
+    public size: number
+
 
     constructor( file: File ) {
 
         this.file = file;
         this.fileName = file.name;
+        this.size = file.size;
 
         this.isUploading = false;
         this.progress = 0;

@@ -22,4 +22,9 @@ export class PhotosComponent implements OnInit {
   ngOnInit() {
   }
 
+  deletePhoto(index:number){
+    console.log(this.files.slice(index, index));
+    
+  }
+
 }

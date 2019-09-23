@@ -1,4 +1,3 @@
-
 <h4>Subir fotos</h4>
 
 <span>Puedes subir hasta un máximo de 10 fotos o 20 Mb.</span>
@@ -11,8 +10,37 @@
 
 </div>
 
-<div class="images-container">
-  <div class="preview-image" *ngFor="let image of files">
-    <img class="responsive-img" [src]="image?.imageUrl" />
-  </div>
-</div>
+<table class="centered">
+  <thead>
+    <tr>
+      <th>Imagen</th>
+      <th>Nombre</th>
+      <th>Peso</th>
+      <th>Eliminar</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let image of files; let i =index">
+      <td class="image-cell">
+        <div class="preview-image">
+          <img class="responsive-img" [src]="image?.imageUrl" [alt]="image?.fileName" />
+        </div>
+      </td>
+      <td>
+        <span class="file-name">{{image?.fileName}}</span>
+
+      </td>
+      <td>
+        <span class="file-size">{{image?.size | bytes: 'mega'}}</span>
+
+      </td>
+      <td>
+          <button (click)="deletePhoto(i)" class="waves-effect waves-light btn"><i class="material-icons left">delete</i>Eliminar</button>
+
+        </td>
+    </tr>
+
+  </tbody>
+</table>
