@@ -27,4 +27,7 @@ export class PhotosComponent implements OnInit {
     
   }
 
+  delete(index:number){
+    this.files.splice(index,1);
+  }
 }

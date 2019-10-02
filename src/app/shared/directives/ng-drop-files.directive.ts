@@ -12,6 +12,10 @@ export class NgDropFilesDirective {
   /**
    * Files array
    */
+  @Input() limitFiles: number = 10;
+  /**
+   * Files array
+   */
   @Input() files: FileItem[] = [];
   /**
    * Files limit
@@ -135,7 +139,7 @@ export class NgDropFilesDirective {
    */
   private _isValidFile(file: File): boolean {
 
-    return !this._isFileDropped(file.name) && this._isImage(file.type);
+    return !this._isFileDropped(file.name) && this._isImage(file.type) && this._isUnderFilesLimit() && this._isUnderSizeLimit(file.size);
 
   }
 
@@ -173,11 +177,28 @@ export class NgDropFilesDirective {
     return (fileType === '' || fileType === undefined) ? false : fileType.startsWith('image');
   }
 
+    /**
+   * Valid if size in under the limit
+   * @param file 
+   */
+  private _isUnderFilesLimit(): boolean {
+    return this.files.length +1 <= this.filesLimit;
+  }
+
+
   /**
    * Valid if size in under the limit
    * @param file 
    */
-  private _isUndersizeLimit(file: File): boolean {
-    return ;
+  private _isUnderSizeLimit(fileSize: number): boolean {
+
+    let size:number = !this.files.length ? 0 :
+    this.files
+    .map((file)=> file.size)
+    .reduce((acum, tam)=> acum + tam);
+
+    size+= fileSize;
+
+    return (size/1000000) < this.sizeLimit;
   }
 }

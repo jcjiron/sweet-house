@@ -1,0 +1,33 @@
+
+@import "../../../../sass/materialize-imports.scss";
+
+
+.card-image{
+    background-repeat: no-repeat !important;
+    background-size: 100% !important;
+    height: 200px;
+}
+.card-content{
+    padding: 25px 0 0 0 !important;
+
+    .photo-info-container{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        flex-flow: column;
+        text-align: center;
+
+        .photo-info{
+            display: flex !important;
+        flex-wrap: nowrap;
+            flex-flow: column !important;
+        }
+
+        .delete-button{
+            background: $accent-color1;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

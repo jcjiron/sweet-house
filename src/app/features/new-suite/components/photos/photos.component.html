@@ -1,7 +1,7 @@
 <h4>Subir fotos</h4>
 
 <span>Puedes subir hasta un máximo de 10 fotos o 20 Mb.</span>
-<div appNgDropFiles [files]="files" (onMouseOver)="estaSobreElemento = $event"
+<div appNgDropFiles [files]="files" [limitFiles]="10" [sizeLimit]="20" (onMouseOver)="estaSobreElemento = $event"
   [ngClass]="{ 'file-over': estaSobreElemento }" class="well drop-zone">
   <h4>Haz click o deja caer las fotos aquí</h4>
   <img src="assets/img/drop-images.png">
@@ -10,37 +10,9 @@
 
 </div>
 
-<table class="centered">
-  <thead>
-    <tr>
-      <th>Imagen</th>
-      <th>Nombre</th>
-      <th>Peso</th>
-      <th>Eliminar</th>
 
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr *ngFor="let image of files; let i =index">
-      <td class="image-cell">
-        <div class="preview-image">
-          <img class="responsive-img" [src]="image?.imageUrl" [alt]="image?.fileName" />
-        </div>
-      </td>
-      <td>
-        <span class="file-name">{{image?.fileName}}</span>
-
-      </td>
-      <td>
-        <span class="file-size">{{image?.size | bytes: 'mega'}}</span>
-
-      </td>
-      <td>
-          <button (click)="deletePhoto(i)" class="waves-effect waves-light btn"><i class="material-icons left">delete</i>Eliminar</button>
-
-        </td>
-    </tr>
-
-  </tbody>
-</table>
+<div class="row">
+<div  *ngFor="let image of files; let i =index" class="col s12 m4 l3">
+  <app-photo-preview [photo]="image" (deletePhoto)="delete($event)"></app-photo-preview>
+</div>
+</div>

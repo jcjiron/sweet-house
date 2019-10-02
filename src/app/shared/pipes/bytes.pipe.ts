@@ -10,9 +10,9 @@ export class BytesPipe implements PipeTransform {
     switch(args){
       case 'mega':
 
-      const mgbyts = (value /1000000).toFixed(3);
+      const mgbyts = (value /1000000).toFixed(2);
 
-        return `${mgbyts} Mb`;
+        return mgbyts;
     }
 
     return null;
