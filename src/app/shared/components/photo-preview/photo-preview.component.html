@@ -1,13 +1,13 @@
 <div class="card ">
-    <div class="card-image" [ngStyle]="{background: 'url(' + photo.imageUrl + ')'}">
+    <div class="card-image" [ngStyle]="{background: 'url(' + photo.photo.imageUrl + ')'}">
     </div>
     <div class="card-content">
         <div class="photo-info-container">
             <div class="photo-info">
-                <span>{{photo?.fileName}}</span>
-                <span>{{photo?.size | bytes: 'mega'}} Mb</span>
+                <span>{{photo.photo?.fileName}}</span>
+                <span>{{photo.photo?.size | bytes: 'mega'}} Mb</span>
             </div>
-            <a (click)="delete(i)" class="delete-button waves-effect waves-light btn">
+            <a (click)="delete(photo.index)" class="delete-button waves-effect waves-light btn">
                 <i class="material-icons left">delete</i>
                 Borrar</a>
         </div>

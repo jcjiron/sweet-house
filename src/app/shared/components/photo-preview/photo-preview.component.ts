@@ -8,7 +8,7 @@ import { FileItem } from '../../models/file-item.class';
 })
 export class PhotoPreviewComponent implements OnInit {
 
-  @Input() photo: FileItem 
+  @Input() photo: {photo:FileItem, index:number} 
   @Output() deletePhoto: EventEmitter<number> = new EventEmitter(); 
 
 
@@ -18,6 +18,6 @@ export class PhotoPreviewComponent implements OnInit {
   }
 
   delete(index:number){
-    this.deletePhoto.emit(index);
+    this.deletePhoto.emit(this.photo.index);
   }
 }

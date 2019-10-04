@@ -119,7 +119,7 @@ export class NgDropFilesDirective {
 
     for (const property in Object.getOwnPropertyNames(filesList)) {
 
-      const file = filesList[property];
+      const file:File = filesList[property];
 
       if (this._isValidFile(file) && this.files.length < this.filesLimit) {
 

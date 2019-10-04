@@ -1,14 +1,16 @@
 import { Action } from '@ngrx/store';
 
 
-export const NEW_SUITE_FIRST_STEP = '[New suite] first step';
+export const BASIC_INFORMATION_STEP = '[New suite] first step';
 export const NEW_SUITE_THIRD_STEP = '[New suite] third step';
-export const NEW_SUITE_FOURTH_STEP = '[New suite] location step';
+export const LOCATION_STEP = '[New suite] location step';
+export const PHOTOS_STEP = '[New suite] location step';
+
 
 
 
 export class NewSuiteFirstStepAction implements Action {
-    readonly type = NEW_SUITE_FIRST_STEP;
+    readonly type = BASIC_INFORMATION_STEP;
     constructor(public payload: any) { }
 }
 
@@ -18,7 +20,12 @@ export class NewSuiteThirdStepAction implements Action {
 }
 
 export class NewSuiteFourthStepAction implements Action {
-    readonly type = NEW_SUITE_FOURTH_STEP;
+    readonly type = LOCATION_STEP;
+    constructor(public payload: any) { }
+}
+
+export class NewSuitePhotosStepAction implements Action {
+    readonly type = PHOTOS_STEP;
     constructor(public payload: any) { }
 }
 /**
@@ -26,5 +33,6 @@ export class NewSuiteFourthStepAction implements Action {
  */
 export type newSuiteActions = | NewSuiteFirstStepAction
     | NewSuiteFourthStepAction
+    | NewSuitePhotosStepAction
     | NewSuiteThirdStepAction;
 

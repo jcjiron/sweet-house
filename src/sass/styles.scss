@@ -6,7 +6,7 @@
 /**Theme*/
 /************************************************************/
 .btn-secondary{
-    background: $accent-color1;
+    background: $accent-color1 !important;
     &:hover{
         background: $accent-color1-dark !important;
     }

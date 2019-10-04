@@ -32,7 +32,7 @@ export const InitialState: NewSuiteState = {
 /**Función para identificar el estado de la aplicación, si existe o no una sesión activa */
 export function newSuiteReducer(state = InitialState, action: fromNewSuite.newSuiteActions): NewSuiteState {
     switch (action.type) {
-        case fromNewSuite.NEW_SUITE_FIRST_STEP:
+        case fromNewSuite.BASIC_INFORMATION_STEP:
             return {
                 ...state,
                 ...action.payload,
@@ -45,11 +45,17 @@ export function newSuiteReducer(state = InitialState, action: fromNewSuite.newSu
                 ...action.payload,
                 registerStep: 4
             };
-        case fromNewSuite.NEW_SUITE_FOURTH_STEP:
+        case fromNewSuite.LOCATION_STEP:
             return {
                 ...state,
                 ...action.payload,
                 registerStep: 5
+            };
+        case fromNewSuite.PHOTOS_STEP:
+            return {
+                ...state,
+                ...action.payload,
+                registerStep: 6
             };
         default:
             return state;

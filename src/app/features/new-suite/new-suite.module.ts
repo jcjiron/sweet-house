@@ -12,6 +12,7 @@ import { MainInfoComponent } from './components/main-info/main-info.component';
 import { NewSuiteRoutingModule } from './new-suite.routing';
 import { Routes, RouterModule } from '@angular/router';
 import { AgmCoreModule } from '@agm/core';
+import { ResumeComponent } from './resume/resume.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { AgmCoreModule } from '@agm/core';
         DetailsComponent,
         PhotosComponent,
         LocationComponent,
-        MainInfoComponent
+        MainInfoComponent,
+        ResumeComponent
     ],
     imports: [
         ThemeModule,

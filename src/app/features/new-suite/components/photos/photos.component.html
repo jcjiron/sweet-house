@@ -13,6 +13,16 @@
 
 <div class="row">
 <div  *ngFor="let image of files; let i =index" class="col s12 m4 l3">
-  <app-photo-preview [photo]="image" (deletePhoto)="delete($event)"></app-photo-preview>
+  <app-photo-preview [photo]="{photo:image, index: i}" (deletePhoto)="delete($event)"></app-photo-preview>
 </div>
+</div>
+
+<div class="row">
+  <div class="col s12 next-button-container">
+    <button (click)="goToBackStep()" class="waves-effect waves-light btn btn-secondary">
+      <i class="material-icons left">keyboard_arrow_left</i>Atras</button>
+  
+    <button (click)="goToNextStep()" [disabled]="files?.length === 0" class="waves-effect waves-light btn next-button">
+      <i class="material-icons right">keyboard_arrow_right</i>Siguiente</button>
+  </div>
 </div>

@@ -10,7 +10,8 @@ export class FileItem {
 
 
     constructor( file: File ) {
-
+        console.log(file);
+        
         this.file = file;
         this.fileName = file.name;
         this.size = file.size;

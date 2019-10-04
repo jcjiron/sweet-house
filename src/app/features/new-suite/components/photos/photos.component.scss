@@ -27,6 +27,15 @@ table{
     margin-right: 3px;
 }
 
+.next-button-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+
+    .next-button{
+        margin-left: 4px;
+    }
+}
 
 @media #{$small-and-down} {
     .preview-image {

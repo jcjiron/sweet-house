@@ -7,6 +7,7 @@ import { NgModule } from '@angular/core';
 
 import { MainInfoComponent } from './components/main-info/main-info.component';
 import { NewSuiteComponent } from './new-suite.component';
+import { ResumeComponent } from './resume/resume.component';
 
 const routes: Routes = [
     { path: 'new-suite', component: NewSuiteComponent, children:[
@@ -14,7 +15,8 @@ const routes: Routes = [
         { path: 'address', component: AddressComponent },
         { path: 'details', component: DetailsComponent },
         { path: 'location', component: LocationComponent },
-        { path: 'photos', component: PhotosComponent }
+        { path: 'photos', component: PhotosComponent },
+        { path: 'resume', component: ResumeComponent }
     ] }
 ];
 
