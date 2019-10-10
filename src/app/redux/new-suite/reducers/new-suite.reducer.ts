@@ -25,7 +25,14 @@ export const InitialState: NewSuiteState = {
     photos: [],
     latitude: null,
     longitude: null,
-    googleAddress: null
+    googleAddress: null,
+    state: null,
+    zipCode: null,
+    suburb: null,
+    street: null,
+    city: null,
+    internalNumber: null,
+    externalNumber: null
 };
 
 
@@ -38,7 +45,12 @@ export function newSuiteReducer(state = InitialState, action: fromNewSuite.newSu
                 ...action.payload,
                 registerStep: 2
             };
-
+        case fromNewSuite.ADDRESS_STEP:
+            return {
+                ...state,
+                ...action.payload,
+                registerStep: 3
+            };
         case fromNewSuite.NEW_SUITE_THIRD_STEP:
             return {
                 ...state,

@@ -1,17 +1,17 @@
 <h4>Dirección del lugar </h4>
 
-<form>
+<form [formGroup]="newSuiteStep2Form" (ngSubmit)="goToNextStep()" autocomplete="off">
   <div class="row">
     <div class="col s6 m6">
       <mz-input-container>
-        <input mz-input [label]="'Estado'" [validate]="false" id="state-input" placeholder="Ciudad de México"
+        <input mz-input formControlName="state" [label]="'Estado'" [validate]="false" id="state-input" placeholder="Ciudad de México"
           type="text" name="state">
       </mz-input-container>
     </div>
 
     <div class="col s6 m6">
       <mz-input-container>
-        <input mz-input [label]="'Delegación o Municipio'" [validate]="false" id="city-input" placeholder="Chapultepec"
+        <input mz-input formControlName="city"  [label]="'Delegación o Municipio'" [validate]="false" id="city-input" placeholder="Chapultepec"
           type="text" name="city">
       </mz-input-container>
     </div>
@@ -20,13 +20,13 @@
   <div class="row">
     <div class="col s6 m6">
       <mz-input-container>
-        <input mz-input [label]="'Código postal'" [validate]="false" id="zip-code-input" placeholder="55079"
+        <input mz-input formControlName="zipCode"  [label]="'Código postal'" [validate]="false" id="zip-code-input" placeholder="55079"
           type="number" name="zipCode">
       </mz-input-container>
     </div>
     <div class="col s6 m6">
       <mz-input-container>
-        <input mz-input [label]="'Colonia'" [validate]="false" id="suburb-input" placeholder="Jardines de Morelos"
+        <input mz-input formControlName="suburb" [label]="'Colonia'" [validate]="false" id="suburb-input" placeholder="Jardines de Morelos"
           type="text" name="suburb">
       </mz-input-container>
     </div>
@@ -36,19 +36,19 @@
   <div class="row">
     <div class="col s12 m4">
       <mz-input-container>
-        <input mz-input [label]="'Calle'" [validate]="false" id="street-input" placeholder="Girasoles" type="text"
+        <input mz-input formControlName="street" [label]="'Calle'" [validate]="false" id="street-input" placeholder="Girasoles" type="text"
           name="street">
       </mz-input-container>
     </div>
     <div class="col s6 m4">
       <mz-input-container>
-        <input mz-input [label]="'N. interno'" [validate]="false" id="internal-number-input" placeholder="12"
+        <input mz-input formControlName="internalNumber" [label]="'N. interno'" [validate]="false" id="internal-number-input" placeholder="12"
           type="number" name="internalNumber">
       </mz-input-container>
     </div>
     <div class="col s6 m4">
       <mz-input-container>
-        <input mz-input [label]="'N. externo'" [validate]="false" id="external-number-input" placeholder="5"
+        <input mz-input formControlName="externalNumber" [label]="'N. externo'" [validate]="false" id="external-number-input" placeholder="5"
           type="number" name="externalNumber">
       </mz-input-container>
     </div>
@@ -58,7 +58,7 @@
       <button (click)="goToBackStep()" class="waves-effect waves-light btn btn-secondary"><i
           class="material-icons left">keyboard_arrow_left</i>Atras</button>
 
-      <button (click)="goToNextStep()" class="waves-effect waves-light btn next-button"><i
+      <button type="submit" [disabled]="newSuiteStep2Form?.invalid"  class="waves-effect waves-light btn next-button"><i
           class="material-icons right">keyboard_arrow_right</i>Siguiente</button>
     </div>
   </div>

@@ -15,5 +15,12 @@ export interface SuiteInterface {
     photos?:string[]
     latitude?:number,
     longitude?:number,
-    googleAddress?:string
+    googleAddress?:string,
+    state?: string;
+    zipCode?: number;
+    suburb?: string;
+    street?: string;
+    city?: string;
+    internalNumber?: number;
+    externalNumber?: number;
 }
