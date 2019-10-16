@@ -9,6 +9,9 @@ import { NgDropFilesDirective } from './directives/ng-drop-files.directive';
 import { BytesPipe } from './pipes/bytes.pipe';
 import { PhotoPreviewComponent } from './components/photo-preview/photo-preview.component';
 
+/**Carousel*/
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+
 @NgModule({
   declarations: [
     CarouselComponent, 
@@ -21,7 +24,8 @@ import { PhotoPreviewComponent } from './components/photo-preview/photo-preview.
   ],
   imports: [
     CommonModule,
-    ThemeModule
+    ThemeModule,
+    SlickCarouselModule
   ],
   providers:[
   ],
@@ -32,7 +36,8 @@ import { PhotoPreviewComponent } from './components/photo-preview/photo-preview.
     PaymentComponent,
     NgDropFilesDirective,
     BytesPipe,
-    PhotoPreviewComponent
+    PhotoPreviewComponent,
+    SlickCarouselModule
   ]
 })
 export class SharedModule { }
