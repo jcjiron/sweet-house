@@ -1,11 +1,43 @@
-<h4>Resumen</h4>
+<h4>Confirma la información</h4>
 
+
+<div class="row">
+    <h6 class="col s12">Información básica</h6>
+    <span class="col s6 m4">Precio: <br> algo</span>
+    <span class="col s6 m4">Servicio: <br> algo</span>
+    <span class="col s12 m4">Tipo de propiedad: <br> algo</span>
+
+</div>
+
+<div class="row">
+    <h6 class="col s12">Dirección</h6>
+    <span class="col s6 m4">Estado: <br> algo</span>
+    <span class="col s6 m4">Delegación o municipio: <br> algo</span>
+    <span class="col s6 m4">Código postal: <br> algo</span>
+    <span class="col s6 m4">Colonia: <br> algo</span>
+    <span class="col s6 m4">Calle: <br> algo</span>
+    <span class="col s6 m4">N. exterior: <br> algo</span>
+    <span class="col s6 m4">N. interior: <br> algo</span>
+    <span class="col s12 m4">Dirección en Google Maps: <br> algo</span>
+
+</div>
+
+<div class="row">
+    <h6 class="col s12">Detalles</h6>
+    <span class="col s6 m4">Recamaras: <br> algo</span>
+    <span class="col s6 m4">Baños: <br> algo</span>
+    <span class="col s6 m4">Estacionamientos: <br> algo</span>
+    <span class="col s6 m4">Metros cuadrados: <br> algo</span>
+    <span class="col s12">Descripción: <br> algo</span>
+</div>
 
 
 <div class="row">
     <div class="col s12 next-button-container">
-    
-      <button (click)="finish()" class="waves-effect waves-light btn next-button">
-        <i class="material-icons right">cloud_upload</i>Finalizar</button>
+        <button (click)="postSuite()" class="waves-effect waves-light btn btn-secondary"><i
+                class="material-icons left">keyboard_arrow_left</i>Atras</button>
+
+        <button type="submit" [disabled]="newSuiteStep2Form?.invalid"
+            class="waves-effect waves-light btn next-button"><i class="material-icons right">house</i>Postear</button>
     </div>
-  </div>
+</div>

@@ -2,9 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { AppState } from 'src/app/app.reducer';
 import { Store } from '@ngrx/store';
 import { SuiteInterface } from 'src/app/shared/models/suite.interface';
+<<<<<<< HEAD
 import { HttpRequestService } from 'src/app/shared/services/http-request.service';
 import { Router } from '@angular/router';
 import { NEW_SUITE_POST } from 'src/app/core/environment/app-urls.constant';
+=======
+import { Router } from '@angular/router';
+>>>>>>> 1b9283e7c45ce7ca07e6aa3abfaea82e8c5d0b4a
 
 @Component({
   selector: 'app-resume',
@@ -31,7 +35,7 @@ export class ResumeComponent implements OnInit {
   }
 
 
-  finish(){
+  postSuite(){
     this.http.post(NEW_SUITE_POST, this.newsuiteInfo)
       .subscribe(data=>{
         
@@ -39,4 +43,5 @@ export class ResumeComponent implements OnInit {
         this.router.navigate(['my-suites']);
       })
   }
+
 }

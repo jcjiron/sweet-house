@@ -10,6 +10,9 @@ import { BytesPipe } from './pipes/bytes.pipe';
 import { PhotoPreviewComponent } from './components/photo-preview/photo-preview.component';
 import { OnlyNumberDirective } from './directives/only-number.directive';
 
+/**Carousel*/
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+
 @NgModule({
   declarations: [
     CarouselComponent, 
@@ -23,7 +26,8 @@ import { OnlyNumberDirective } from './directives/only-number.directive';
   ],
   imports: [
     CommonModule,
-    ThemeModule
+    ThemeModule,
+    SlickCarouselModule
   ],
   providers:[
   ],
@@ -35,7 +39,8 @@ import { OnlyNumberDirective } from './directives/only-number.directive';
     NgDropFilesDirective,
     BytesPipe,
     PhotoPreviewComponent,
-    OnlyNumberDirective
+    OnlyNumberDirective,
+    SlickCarouselModule
   ]
 })
 export class SharedModule { }
