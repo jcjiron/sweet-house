@@ -8,6 +8,7 @@ import { PaymentComponent } from './components/payment/payment.component';
 import { NgDropFilesDirective } from './directives/ng-drop-files.directive';
 import { BytesPipe } from './pipes/bytes.pipe';
 import { PhotoPreviewComponent } from './components/photo-preview/photo-preview.component';
+import { OnlyNumberDirective } from './directives/only-number.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PhotoPreviewComponent } from './components/photo-preview/photo-preview.
     PaymentComponent,
     NgDropFilesDirective,
     BytesPipe,
-    PhotoPreviewComponent
+    PhotoPreviewComponent,
+    OnlyNumberDirective
   ],
   imports: [
     CommonModule,
@@ -32,7 +34,8 @@ import { PhotoPreviewComponent } from './components/photo-preview/photo-preview.
     PaymentComponent,
     NgDropFilesDirective,
     BytesPipe,
-    PhotoPreviewComponent
+    PhotoPreviewComponent,
+    OnlyNumberDirective
   ]
 })
 export class SharedModule { }

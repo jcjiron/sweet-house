@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { SharedModule } from '../shared/shared.module';
 import { CoreModule } from '../core/core.module';
+import { MySuitesModule } from './my-suites/my-suites.module';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { CoreModule } from '../core/core.module';
     HomeComponent
   ],
   imports: [
+    MySuitesModule,
     NewSuiteModule,
     CommonModule,
     ThemeModule,

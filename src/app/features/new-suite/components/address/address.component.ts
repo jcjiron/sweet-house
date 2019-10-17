@@ -23,19 +23,21 @@ export class AddressComponent implements OnInit {
 
   newSuiteStep2Form: FormGroup;
 
+  isFormEnable: boolean = false;
+
   constructor(
-    private router:Router,
-    private store:Store<AppState>
-  ) {}
+    private router: Router,
+    private store: Store<AppState>
+  ) { }
 
   ngOnInit() {
 
     this.store.select('newSuite')
-      .subscribe(newSuite=>{
+      .subscribe(newSuite => {
 
-        if (!(newSuite.registerStep >= REGISTER_STEP2)) {
-          this.router.navigate(['/new-suite']);
-        }
+        // if (!(newSuite.registerStep >= REGISTER_STEP2)) {
+        //   this.router.navigate(['/new-suite']);
+        // }
 
         this.state = newSuite.state;
         this.zipCode = newSuite.zipCode;
@@ -47,26 +49,59 @@ export class AddressComponent implements OnInit {
 
         this.newSuiteStep2Form = new FormGroup({
 
-          state: new FormControl(this.state, Validators.required),
-          zipCode: new FormControl(this.zipCode, Validators.required),
-          suburb: new FormControl(this.suburb, Validators.required),
-          city: new FormControl(this.city, Validators.required),
-          street: new FormControl(this.street, Validators.required),
-          internalNumber: new FormControl(this.internalNumber, Validators.required),
-          externalNumber: new FormControl(this.externalNumber, Validators.required)
+          state: new FormControl({ value: this.state, disabled: !this.isFormEnable }, Validators.required),
+          zipCode: new FormControl(this.zipCode, [Validators.required, Validators.minLength(5)]),
+          suburb: new FormControl({ value: this.suburb, disabled: !this.isFormEnable }, Validators.required),
+          city: new FormControl({ value: this.city, disabled: !this.isFormEnable }, Validators.required),
+          street: new FormControl({ value: this.street, disabled: !this.isFormEnable }, Validators.required),
+          internalNumber: new FormControl({ value: this.internalNumber, disabled: !this.isFormEnable }, Validators.required),
+          externalNumber: new FormControl({ value: this.externalNumber, disabled: !this.isFormEnable }, Validators.required)
         });
       })
 
   }
 
-  goToNextStep(){
+  validateZipCode() {
+    console.log(this.newSuiteStep2Form.controls['zipCode'].value);
+
+    console.log(`${this.newSuiteStep2Form.controls['zipCode'].value}`, `${this.newSuiteStep2Form.controls['zipCode'].value}`.length);
+
+    if (typeof this.newSuiteStep2Form.controls['zipCode'].value === 'number' && `${this.newSuiteStep2Form.controls['zipCode'].value}`.length >= 4) {
+
+      this.enableForms();
+    } else {
+      this.disableForms();
+    }
+  }
+
+  enableForms() {
+    this.newSuiteStep2Form.controls['state'].enable();
+    this.newSuiteStep2Form.controls['suburb'].enable();
+    this.newSuiteStep2Form.controls['city'].enable();
+    this.newSuiteStep2Form.controls['street'].enable();
+    this.newSuiteStep2Form.controls['internalNumber'].enable();
+    this.newSuiteStep2Form.controls['externalNumber'].enable();
+
+  }
+
+  disableForms() {
+    this.newSuiteStep2Form.controls['state'].disable();
+    this.newSuiteStep2Form.controls['suburb'].disable();
+    this.newSuiteStep2Form.controls['city'].disable();
+    this.newSuiteStep2Form.controls['street'].disable();
+    this.newSuiteStep2Form.controls['internalNumber'].disable();
+    this.newSuiteStep2Form.controls['externalNumber'].disable();
+
+  }
+
+  goToNextStep() {
     console.log(this.newSuiteStep2Form.value);
-    
+
     this.store.dispatch(new NewSuiteAddressStepAction({ ...this.newSuiteStep2Form.value }));
     this.router.navigate(['new-suite/details']);
   }
 
-  goToBackStep(){
+  goToBackStep() {
 
     this.router.navigate(['new-suite']);
   }
